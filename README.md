@@ -12,5 +12,6 @@ but eya just look up this "how to use bookmarklets" and boom you got it!
  thats it ill add any thing further if needed
 
 # crasher
-**only chromebook crasher on it hub**
+**only chromebook crasher on git hub**
+
 tell a freind that its a game or sum shit and send them the link to my git hub and download the code or donwnload the code and send it to the but if you send through email mak sure to send as a file DO NOT COPY AND PAST CODE you will spoil the fun!!!
