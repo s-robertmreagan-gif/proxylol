@@ -1,40 +1,31 @@
-```js id="z18qaf"
-import express from "express";
-import cors from "cors";
+const express = require("express");
+const fetch = require("node-fetch");
+const path = require("path");
 
 const app = express();
 
-app.use(cors());
+app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.send("Proxy backend running");
-});
+app.get("/proxy", async (req, res) => {
+    const url = req.query.url;
 
-app.get("/fetch", async (req, res) => {
+    if (!url) {
+        return res.status(400).send("Missing URL");
+    }
 
-  const url = req.query.url;
+    try {
+        const response = await fetch(url);
+        const data = await response.text();
 
-  if (!url) {
-    return res.status(400).send("Missing URL");
-  }
-
-  try {
-
-    const response = await fetch(url);
-
-    const text = await response.text();
-
-    res.send(text);
-
-  } catch (err) {
-
-    res.status(500).send("Error fetching site");
-  }
+        res.send(data);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Proxy error");
+    }
 });
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+    console.log(`Server running on port ${PORT}`);
 });
-```
